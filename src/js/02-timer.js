@@ -30,11 +30,8 @@ const options = {
 start.disabled = true;
 flatpickr(inputPicker, options);
 
-//Listening for the button 'start'
 start.addEventListener("click", countdownTimer);
 
-
-// Function
 function countdownTimer() {
   start.disabled = true;
   const timeInMs = Number(inputPicker.dataset.time);
@@ -62,19 +59,14 @@ function setTime(days, hours, minutes, seconds) {
 }
 
 function convertMs(ms) {
-  // Number of milliseconds per unit of time
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
 
-  // Remaining days
   const days = Math.floor(ms / day);
-  // Remaining hours
   const hours = Math.floor((ms % day) / hour);
-  // Remaining minutes
   const minutes = Math.floor(((ms % day) % hour) / minute);
-  // Remaining seconds
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 
   return { days, hours, minutes, seconds };
