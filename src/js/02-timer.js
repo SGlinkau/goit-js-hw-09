@@ -8,6 +8,7 @@ const hoursField = document.querySelector("[data-hours]");
 const minutesField = document.querySelector("[data-minutes]");
 const secondsField = document.querySelector("[data-seconds]");
 const inputPicker = document.querySelector("#datetime-picker");
+let timer;
 
 const options = {
   altInput: true,
@@ -30,7 +31,7 @@ const options = {
 start.disabled = true;
 flatpickr(inputPicker, options);
 
-let timer;
+
 
 start.addEventListener("click", countdownTimer);
 
