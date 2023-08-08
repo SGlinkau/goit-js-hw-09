@@ -30,11 +30,17 @@ const options = {
 start.disabled = true;
 flatpickr(inputPicker, options);
 
+let timer;
+
 start.addEventListener("click", countdownTimer);
 
 function countdownTimer() {
   start.disabled = true;
   const timeInMs = Number(inputPicker.dataset.time);
+
+  if (timer) {
+    clearInterval(timer);
+  }
 
   const timer = setInterval(() => {
     let currentTime = new Date().getTime();
