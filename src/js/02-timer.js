@@ -43,7 +43,7 @@ function countdownTimer() {
     clearInterval(timer);
   }
 
-  const timer = setInterval(() => {
+    timer = setInterval(() => {
     let currentTime = new Date().getTime();
     let timeLeft = timeInMs - currentTime;
     const convertedTime = convertMs(timeLeft);
